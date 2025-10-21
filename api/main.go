@@ -42,8 +42,8 @@ func main() {
 		w.Header().Set("Content-Type", "application/json")
 		w.WriteHeader(http.StatusOK)
 		jsonResponse := map[string]interface{}{
-			"ProbeName": ProbeName,
-			"Time":      helpers.GetCurrTime(),
+			"probe_name": ProbeName,
+			"time":      helpers.GetCurrTime(),
 		}
 		json.NewEncoder(w).Encode(jsonResponse)
 	})
@@ -59,10 +59,10 @@ func main() {
 		w.Header().Set("Content-Type", "application/json")
 		w.WriteHeader(http.StatusNotFound)
 		jsonResponse := map[string]interface{}{
-			"ProbeName": ProbeName,
-			"Time":      helpers.GetCurrTime(),
-			"Error":     404,
-			"Message":   "Not found",
+			"probe_name": ProbeName,
+			"time":      helpers.GetCurrTime(),
+			"error":     404,
+			"message":   "Not found",
 		}
 		json.NewEncoder(w).Encode(jsonResponse)
 	})

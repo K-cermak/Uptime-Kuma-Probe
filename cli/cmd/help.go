@@ -12,7 +12,7 @@ func PrintHelp() {
 	fmt.Println("\033[1mRepository:\033[0m https://github.com/K-cermak/UptimeKumaProbe")
 	fmt.Println("\033[1mLicense:\033[0m MIT")
 	fmt.Println("\033[1mAuthor:\033[0m Karel Cermak | karlosoft.com")
-	fmt.Println("\033[1mVersion:\033[0m v1.0, © 2025")
+	fmt.Println("\033[1mVersion:\033[0m v1.1, © 2025")
 
 	fmt.Println("\n\033[1mUsage: kprobe <command>\033[0m")
 	fmt.Println("\n\033[1mCommands:\033[0m")

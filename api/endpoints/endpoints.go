@@ -32,10 +32,10 @@ func ServeStatus(w http.ResponseWriter, r *http.Request, probeName string) {
 		w.Header().Set("Content-Type", "application/json")
 		w.WriteHeader(http.StatusInternalServerError)
 		jsonResponse := map[string]interface{}{
-			"ProbeName": probeName,
-			"Time":      helpers.GetCurrTime(),
-			"Error":     500,
-			"Message":   "Internal server error",
+			"probe_name": probeName,
+			"time":      helpers.GetCurrTime(),
+			"error":     500,
+			"message":   "Internal server error",
 		}
 		json.NewEncoder(w).Encode(jsonResponse)
 		return
@@ -46,10 +46,10 @@ func ServeStatus(w http.ResponseWriter, r *http.Request, probeName string) {
 		w.Header().Set("Content-Type", "application/json")
 		w.WriteHeader(http.StatusNotFound)
 		jsonResponse := map[string]interface{}{
-			"ProbeName": probeName,
-			"Time":      helpers.GetCurrTime(),
-			"Error":     404,
-			"Message":   "Not found, maybe scan with this name does not exist",
+			"probe_name": probeName,
+			"time":      helpers.GetCurrTime(),
+			"error":     404,
+			"message":   "Not found, maybe scan with this name does not exist",
 		}
 		json.NewEncoder(w).Encode(jsonResponse)
 		return
