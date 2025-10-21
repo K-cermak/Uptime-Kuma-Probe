@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 
 API_DIR="$(pwd)/../api"
 CLI_DIR="$(pwd)/../cli"
@@ -8,45 +9,19 @@ echo "API Directory: $API_DIR"
 echo "CLI Directory: $CLI_DIR"
 echo "BIN Directory: $BIN_DIR"
 
-cd "$API_DIR" || {
-    echo "Failed to change to API directory";
-    exit 1;
-}
+export GOOS=linux
+export GOARCH=amd64
 
-GOOS=linux
-GOARCH=amd64
-go build -o kprobe-api || { 
-    echo "Failed to build API application";
-    exit 1;
-}
+mkdir -p "$BIN_DIR"
 
-[ ! -d "$BIN_DIR" ] && mkdir -p "$BIN_DIR" || {
-    echo "Failed to create bin directory";
-    exit 1;
-}
+# Build API
+cd "$API_DIR"
+echo "[BUILD] Building API..."
+go build -o "$BIN_DIR/kprobe-api"
+echo "[SUCCESS] API build completed successfully"
 
-mv -f kprobe-api "$BIN_DIR" || {
-    echo "Failed to move API binary to bin directory";
-    exit 1;
-}
-
-echo "[SUCCESS] API Build and move completed successfully"
-
-cd "$CLI_DIR" || {
-    echo "Failed to change to CLI directory";
-    exit 1;
-}
-
-GOOS=linux
-GOARCH=amd64
-go build -o kprobe-cli || {
-    echo "Failed to build CLI application";
-    exit 1;
-}
-
-mv -f kprobe-cli "$BIN_DIR" || {
-    echo "Failed to move CLI binary to bin directory";
-    exit 1;
-}
-
-echo "[SUCCESS] CLI Build and move completed successfully"
+# Build CLI
+cd "$CLI_DIR"
+echo "[BUILD] Building CLI..."
+go build -o "$BIN_DIR/kprobe-cli"
+echo "[SUCCESS] CLI build completed successfully"
