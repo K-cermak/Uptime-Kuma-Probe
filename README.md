@@ -6,35 +6,44 @@ By Karel Cermak | [Karlosoft](https://karlosoft.com).
 
 
 
-## Uptime Kuma Probe Extension
-- <b>Uptime Kuma is good at monitoring services and notifications, but it cannot connect through a VPN to the network</b> and find out the status of internal services like Wi-Fi Access Points, Cameras and various other internal things.
-- <b>This Probe solves this</b> - it can simply <b>monitor devices inside the network and provide an API to the main Uptime Kuma instance</b>. It is very <b>simple to install</b>, and does not affect the main Kuma Uptime in any way.
+## What is Uptime Kuma Probe Extension?
+- **Uptime Kuma excels at service monitoring and notifications, but it cannot reach devices hidden behind your internal network or VPN.**
+- This extension fills that gap by running **inside your LAN**, checking local devices (Wi-Fi access points, cameras, internal services, etc.) and exposing their status through an **HTTP API** that your main Uptime Kuma instance can query.
+- It is lightweight, easy to deploy, and works independently of your primary Uptime Kuma installation.
 
 <br>
 
 ## How it works?
-- Create a Linux server (ideally Ubuntu Server) in your internal network. There you will install this extension using [FAQ.md guide](FAQ.md). Then you configure the scans.
-- In Uptime Kuma, you then set up a <b>classic HTTP scan</b> - the Probe API will return a certain response if the service works and another if it doesn't. Uptime Kuma will now get up-to-date information about the <b>status of the service even if it does not have access to the network</b>, but only to the API server.
+1. Set up a small Linux machine (Ubuntu Server recommended) inside your local network.
+2. Install this extension following the steps in the [FAQ.md](FAQ.md).
+3. Configure the scans you want to run.
+4. In Uptime Kuma, create a **standard HTTP monitor** pointing to the Probe API endpoint.
+   - The API returns a success or failure response depending on the scan results, allowing Uptime Kuma to monitor internal services **without direct access** to that network.
+
 
 <br>
 
 
-## What can it do?
-- Measure <b>ICMP ping</b> reachability with a timeout limit.
-- Make an <b>HTTP request</b> with a timeout limit and check a <b>certain status code</b> and the <b>keyword in the response</b>.
-- Simple <b>editor for scan configuration</b> and simple <b>CLI interface</b>.
-- <b>API server</b> for the main Uptime Kuma instance.
+## Features
+* ICMP ping checks with configurable timeouts
+* HTTP requests with timeout, expected status code validation, and optional keyword matching
+* Simple configuration editor and CLI tools
+* Dedicated API server for integration with Uptime Kuma or other systems
 
 <br>
 
 ## Can I use it without Uptime Kuma?
-- Yes, you can use it as a <b>simple monitoring tool</b>. You can use the API to get the status of the services.
-- But keep in mind that this app itself can't send notifications, nor will it ever (there is no plan to develop in this direction).
+Yes — the API can be queried directly if you just need a simple, local monitoring tool.
+
+Keep in mind:
+- This extension does **not** send notifications.
+- There are no plans to add notification features.
 
 <br>
 
-## How to start?
-- You can find the <b>installation guide<b> in the [FAQ.md](FAQ.md) file. You can also find the uninstallation guide there and other useful information.
+## Getting Started
+
+Installation, uninstallation, and other tips are available in the [FAQ.md](FAQ.md).
 
 
 <br>
