@@ -4,8 +4,6 @@ By Karel Cermak | [Karlosoft](https://karlosoft.com).
 
 <img src="https://cdn.karlosoft.com/cdn-data/ks/img/kprobe/github.png" width="700" alt="Uptime Kuma Probe Extension">
 
-
-
 ## What is Uptime Kuma Probe Extension?
 - **Uptime Kuma excels at service monitoring and notifications, but it cannot reach devices hidden behind your internal network or VPN.**
 - This extension fills that gap by running **inside your LAN**, checking local devices (Wi-Fi access points, cameras, internal services, etc.) and exposing their status through an **HTTP API** that your main Uptime Kuma instance can query.
@@ -25,25 +23,24 @@ By Karel Cermak | [Karlosoft](https://karlosoft.com).
 
 
 ## Features
-* ICMP ping checks with configurable timeouts
-* HTTP requests with timeout, expected status code validation, and optional keyword matching
-* Simple configuration editor and CLI tools
-* Dedicated API server for integration with Uptime Kuma or other systems
+- **ICMP ping checks** with configurable timeouts
+- **HTTP requests** with timeout, expected status code validation, and optional keyword matching
+- Simple configuration editor and CLI tools
+- Dedicated API server for integration with Uptime Kuma or other systems
 
 <br>
 
 ## Can I use it without Uptime Kuma?
-Yes — the API can be queried directly if you just need a simple, local monitoring tool.
+- Yes — the API can be queried directly if you just need a simple, local monitoring tool.
 
-Keep in mind:
-- This extension does **not** send notifications.
-- There are no plans to add notification features.
+- Keep in mind:
+    - This extension does **not** send notifications.
+    - There are no plans to add notification features.
 
 <br>
 
 ## Getting Started
-
-Installation, uninstallation, and other tips are available in the [FAQ.md](FAQ.md).
+- Installation, uninstallation, and other tips are available in the [FAQ.md](FAQ.md).
 
 
 <br>
