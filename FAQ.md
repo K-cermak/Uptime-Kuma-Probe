@@ -21,22 +21,22 @@
 sudo apt update
 sudo apt install git
 
-git clone https://github.com/K-cermak/UptimeKumaProbe
+git clone https://github.com/K-cermak/Uptime-Kuma-Probe
 ```
 
-- <b>Open the `UptimeKumaProbe` directory and run the installation script. App will be installed in `/opt/kprobe` directory, API is installed as a service and will start on boot.</b>
+- <b>Open the `Uptime-Kuma-Probe` directory and run the installation script. App will be installed in `/opt/kprobe` directory, API is installed as a service and will start on boot.</b>
 
 ```
-cd UptimeKumaProbe/scripts
+cd Uptime-Kuma-Probe/scripts
 sudo ./install.sh
 ```
 
 - If the last command fails, try run: `chmod +x install.sh`.
 
 > [!NOTE]
-> You can now remove the `UptimeKumaProbe` directory.
+> You can now remove the `Uptime-Kuma-Probe` directory.
 
-- You shoudl now init the database and restart the API service.
+- You should now init the database and restart the API service.
 
 ```
 kprobe db init
@@ -47,7 +47,7 @@ sudo kprobe api restart
 <br>
 
 ## Editor
-- You can now open the editor and create a scan. You can find the editor [here](https://github.com/K-cermak/UptimeKumaProbe/blob/main/web-editor/editor.html) (download it and open it in your browser).
+- You can now open the editor and create a scan. You can find the editor [here](https://github.com/K-cermak/Uptime-Kuma-Probe/blob/main/web-editor/editor.html) (download it and open it in your browser).
 
 > [!NOTE]
 > You can also find the editor at `http://YOUR_SERVER_IP/editor` URL.
@@ -267,10 +267,10 @@ kprobe help
 
 ## Uninstallation
 
-- If you have removed the `UptimeKumaProbe` directory (cloned Git repository), clone it again or download the [`uninstall.sh`](scripts/uninstall.sh) script.
+- If you have removed the `Uptime-Kuma-Probe` directory (cloned Git repository), clone it again or download the [`uninstall.sh`](scripts/uninstall.sh) script.
 ```
-git clone https://github.com/K-cermak/UptimeKumaProbe
-cd UptimeKumaProbe/scripts
+git clone https://github.com/K-cermak/Uptime-Kuma-Probe
+cd Uptime-Kuma-Probe/scripts
 ```
 
 
